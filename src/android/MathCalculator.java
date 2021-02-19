@@ -1,4 +1,4 @@
-package cordova-plugin-mathcalculator;
+package cordova.plugin.mathcalculator;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -15,11 +15,11 @@ public class MathCalculator extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException 
     {
-        if(action.equals('add'))
+        if(action.equals("add"))
         {
             this.add(args, callbackContext);
             return true;
-        } else if {
+        } else if (action.equals("substract")) {
             this.substract(args, callbackContext);
             return true;  
         }
@@ -33,10 +33,10 @@ public class MathCalculator extends CordovaPlugin {
                 int p2 = Integer.parseInt( args.getJSONObject(0).getString('param2'));
                 callback.success("" + (p1 + p2));
             }catch(Exception ex) {
-                callback.error('something went wrong' + ex);
+                callback.error("something went wrong" + ex);
             }
         } else {
-            callback.error('plz dont pass null values');
+            callback.error("plz dont pass null values");
         }
     }
 
@@ -47,10 +47,10 @@ public class MathCalculator extends CordovaPlugin {
                 int p2 = Integer.parseInt( args.getJSONObject(0).getString('param2'));
                 callback.success("" + (p1 - p2));
             }catch(Exception ex) {
-                callback.error('something went wrong' + ex);
+                callback.error("something went wrong" + ex);
             }
         } else {
-            callback.error('plz dont pass null values');
+            callback.error("plz dont pass null values");
         }
     }
 }
